@@ -6,6 +6,15 @@ Privacy-first local activity tracker that captures your browsing history, active
 
 67,000+ activities tracked. Zero data sent to the cloud.
 
+### AI Search - Ask anything about your computer activity
+![AI Search](screenshots/ai-search.png)
+
+### System Tray - Runs silently in the background
+![System Tray](screenshots/tray-menu.png)
+
+### Agent Integration - Query through Telegram, Discord, or WhatsApp
+![Telegram Agent](screenshots/telegram-agent.png)
+
 ## What It Does
 
 Nex Life Logger runs silently in the background and tracks:
