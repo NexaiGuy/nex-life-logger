@@ -2,6 +2,12 @@
 
 All notable changes to Nex Life Logger.
 
+## [1.0.3] - 2026-04-04
+
+### Changed
+- License changed from MIT-0 to CC BY-NC 4.0 (free for personal use, commercial use requires paid license)
+- Added LICENSE file with full terms and commercial licensing info
+
 ## [1.0.2] - 2026-04-04
 
 ### Fixed

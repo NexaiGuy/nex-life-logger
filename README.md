@@ -261,6 +261,8 @@ Four tables in a single SQLite file:
 
 ## License
 
-Desktop application: All rights reserved. Copyright (c) 2026 Kevin Blancaflor / Nex AI.
+**CC BY-NC 4.0** - Free for personal and non-commercial use.
 
-ClawHub skill: MIT-0 (free to use, modify, and redistribute).
+Commercial use (within a business, integration into commercial products, or any revenue-generating use) requires a paid license. Contact kevin@nex-ai.be for commercial licensing.
+
+See [LICENSE](LICENSE) for full terms.
