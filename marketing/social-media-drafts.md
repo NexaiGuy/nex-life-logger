@@ -77,27 +77,30 @@ ClawHub: https://clawhub.ai/nexaiguy/nex-life-logger
 
 ### r/ClaudeAI (Day 2)
 
-**Title:** Built a ClawHub skill that tracks your activity and lets you query it with AI
+**Title:** Built a ClawHub skill that tracks your activity and lets you query it with AI (v1.1.0, now with FTS5 search)
 
 **Body:**
 
-Just published a ClawHub skill called nex-life-logger that gives your AI agent persistent memory of what you do on your computer.
+Just pushed v1.1.0 of nex-life-logger, a ClawHub skill that gives your AI agent persistent memory of what you do on your computer.
 
-It runs a background collector that tracks browser history, active windows, and YouTube videos (with transcripts). Then your agent can query all of it through natural language. Ask "What was I researching last week?" and it searches your local SQLite database and answers.
+It runs a background collector that tracks browser history, active windows, and YouTube videos (with full transcripts). Then your agent can query all of it through natural language. Ask "What was I researching last week?" and it searches your local SQLite database and answers.
 
-The AI features work with any OpenAI-compatible API. I'm running it with Qwen (free tier) on my setup, but you can use OpenAI, Groq, Ollama, or anything compatible.
+v1.1.0 just added FTS5 full-text search with Porter stemming, so searching "containers" now matches "container", "containerized", etc. You can also filter by source (`--source chrome`), activity type (`--kind youtube`), and get JSON output for programmatic use (`--output json`). Results are ranked by relevance (text match quality + recency).
+
+The AI features work with any OpenAI-compatible API. I'm running it with Qwen (free tier) on my Raspberry Pi setup, but you can use OpenAI, Groq, Ollama, or anything compatible.
 
 Install: `npx clawhub install nex-life-logger`
 
-Privacy-first: everything stays local. No cloud, no account, no data leaving your machine.
+Privacy-first: everything stays local. No cloud, no account, no data leaving your machine. 67K+ activities tracked so far.
 
 GitHub: https://github.com/NexaiGuy/nex-life-logger
+ClawHub: https://clawhub.ai/nexaiguy/nex-life-logger
 
 ---
 
 ### r/SideProject (Day 2-3)
 
-**Title:** Side project: an AI agent skill that gives your computer a memory
+**Title:** Side project: an AI agent skill that gives your computer a memory (v1.1.0 with FTS5 search)
 
 **Body:**
 
@@ -107,10 +110,12 @@ I run a digital transformation agency in Belgium (Nex AI) and built this as a to
 
 **The solution:** Nex Life Logger runs silently, collects browser history and active window data, fetches YouTube transcripts, and generates daily/weekly/monthly summaries using AI. Now I can ask my Telegram bot "What was I working on yesterday?" and get an actual answer.
 
-Published it to ClawHub (the OpenClaw skill registry) and also put it on GitHub. Got 67K+ activities tracked in the first week of use.
+Just shipped v1.1.0 with FTS5 full-text search. Searches are way faster now, support Porter stemming (so "deploying" matches "deployment"), and results are ranked by relevance + recency. Also added filters so I can drill down: `search "react" --kind url --source chrome --output json`.
+
+Published it to ClawHub (the OpenClaw skill registry) and also put it on GitHub. Got 67K+ activities tracked so far.
 
 What I learned building it:
-- SQLite is perfect for this. Fast, zero config, single file backup
+- SQLite is perfect for this. Fast, zero config, single file backup. FTS5 extension is a game changer for search quality.
 - Content filtering is harder than expected. The productivity filter took multiple iterations
 - YouTube transcripts are gold. The AI summaries are 10x more useful when they include what was discussed in videos
 - Privacy-first isn't just a feature, it's a requirement. Nobody wants their browsing history in the cloud

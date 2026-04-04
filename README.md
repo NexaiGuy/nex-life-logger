@@ -90,9 +90,13 @@ Agent: "Yesterday you spent most of your time on..."
 The ClawHub skill includes a full CLI for querying your data:
 
 ```bash
-# Search across all data
+# Search across all data (FTS5 powered, with relevance ranking)
 nex-life-logger search "docker containers"
 nex-life-logger search "machine learning" --since 2026-03-01
+nex-life-logger search "react" --kind url --source chrome --limit 50
+nex-life-logger search "python" --kind app_focus
+nex-life-logger search "kubernetes" --category tool
+nex-life-logger search "AI agents" --output json
 
 # View AI summaries
 nex-life-logger summary daily
@@ -177,7 +181,7 @@ Summarization (scheduled)
   Each level summarizes the one below it
     |
     v
-Querying
+Querying (FTS5 full-text search with relevance ranking)
   CLI commands, AI search, or agent integration
 ```
 
@@ -198,6 +202,9 @@ Configure with:
 nex-life-logger config set-provider openai
 nex-life-logger config set-api-key
 nex-life-logger config set-model gpt-4o
+nex-life-logger config set-api-base https://api.openai.com/v1
+nex-life-logger config set-poll-interval 60
+nex-life-logger config rebuild-fts
 ```
 
 ## Project Structure

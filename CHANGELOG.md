@@ -2,6 +2,25 @@
 
 All notable changes to Nex Life Logger.
 
+## [1.1.0] - 2026-04-05
+
+### Added
+- FTS5 full-text search with Porter stemming (matches "containers" when searching "container", "deploying" when searching "deployment")
+- Search filters: `--kind`, `--source`, `--category`, `--limit` for targeted queries
+- `--output json` flag on search command for machine-readable structured output
+- Relevance scoring combining FTS5 BM25 rank + recency weighting
+- `config set-api-base` command for custom API endpoints
+- `config set-poll-interval` command for adjustable collection frequency (5-3600 seconds)
+- `config rebuild-fts` command to rebuild search indexes after bulk imports or database sync
+- FTS5 auto-sync triggers: search indexes update automatically on every insert/update/delete
+- Source index on activities table for faster source-filtered queries
+- LIKE fallback when FTS5 tables aren't populated yet
+
+### Changed
+- Search command now uses FTS5 instead of SQL LIKE for significantly faster and smarter matching
+- Search results now include relevance scores (60% text match quality + 40% recency)
+- SKILL.md bumped to v1.1.0 with full documentation of new features
+
 ## [1.0.3] - 2026-04-04
 
 ### Changed
