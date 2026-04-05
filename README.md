@@ -6,7 +6,7 @@ Privacy-first local activity tracker that captures your browsing history, active
 
 67,000+ activities tracked. Zero data sent to the cloud.
 
-(screenshots/Nex_AI_creature_in_purple_tones_optimized.png)
+![](screenshots/Nex_AI_creature_in_purple_tones_optimized.png)
 
 ### AI Search - Ask anything about your computer activity
 ![AI Search](screenshots/ai-search.png)
